@@ -1,7 +1,7 @@
 
                                                           # My Website:
 
-# 📡 web domain
+# 📡 Web domain
 
 https://web-development-environments-2023.github.io/209299684/
 
