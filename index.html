@@ -126,40 +126,53 @@
     <h1>Contact me</h1>
     <p>Email: Albersar@gmail.com</p>
     <p>Kiryat Gat, Israel</p>
-    <form action="mailto:edensar10@gmail.com" method="post" enctype="text/plain">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br>
-        <label for="email">Your Mail:</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required>
-        </textarea>
-        <select name="emoji" id="emoji" onchange="myFunction()">
-            <option value=Emoji>Emoji</option>
-            <option value="&#128514">&#128514</option>
-            <option value="&#128523">&#128523</option>
-            <option value="&#128525">&#128525</option>
-            <option value="&#128564">&#128564</option>
-            <option value="&#128151">&#128151</option>
-            <option value="&#128076">&#128076</option>
-            <option value="&#128545">&#128545</option>
-            <option value="&#128546">&#128546</option>
-        </select>
-        <br>
-        <input type="submit" value="submit">
-    </form>
+    <div>
+        <div class="columns">
+            <form>
+                <label for="fname">Full Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your full name..">
+                <label for="lname">Email</label>
+                <input type="text" id="lname" name="Email" placeholder="Your Email..">
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.."
+                          style="height:170px"></textarea>
 
-    <script>
-        function myFunction() {
-            const textarea = document.getElementById('message');
-            if (document.getElementById('emoji').value != 'Emoji') {
-                textarea.value += document.getElementById('emoji').value;
-            }
-        }
-    </script>
+                <select name="emoji" id="emoji" onchange="myFunction()">
+                    <option value=Emoji>Emoji</option>
+                    <option value="&#128514">&#128514</option>
+                    <option value="&#128523">&#128523</option>
+                    <option value="&#128525">&#128525</option>
+                    <option value="&#128564">&#128564</option>
+                    <option value="&#128151">&#128151</option>
+                    <option value="&#128076">&#128076</option>
+                    <option value="&#128545">&#128545</option>
+                    <option value="&#128546">&#128546</option>
+                </select>
+                <button type="button" onclick="sendEmail()"
+                        style="background-color: #3e8e41; font-family:Klavika bold,serif; font-size: 20px; color: #ffffff; padding: 12px 120px; margin: 10px 10px 20px; border: none; cursor: pointer;">
+                    Submit
+                </button>
+                <script>
+                    function myFunction() {
+                        const textarea = document.getElementById('message');
+                        if (document.getElementById('emoji').value !== 'Emoji') {
+                            textarea.value += document.getElementById('emoji').value;
+                        }
+                    }
+                </script>
+
+            </form>
+            <script>
+                function sendEmail() {
+                    var fullName = document.getElementById("fname").value;
+                    var email = document.getElementById("lname").value;
+                    var email1 = "edensar10@gmail.com";
+                    var subject = document.getElementById("subject").value;
+                    window.location.href = "mailto:" + email1 + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent("Full Name: " + fullName + "\n\n" + "Email: " + email + "\n\n" + "Message: " + subject);
+                }
+            </script>
+        </div>
+    </div>
 </section>
-
 </body>
 </html>
