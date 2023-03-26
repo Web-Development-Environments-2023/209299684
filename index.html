@@ -113,11 +113,10 @@
         to create a more decentralized and secure Internet using blockchain technology.</p>
     <p style="color: #1477ff">2. Explain the differences noted in question 1 by an example of a use scenario (use
         case)</p>
-    <p>Web1 includes typing to receive a search query in the central search engine Google to list sites like the topic.
-        Users must manually find the results to know and trust the site's sources. In contrast, Web3 User in a
-        distributed search engine like Presearch, where the search results were generated based on a consensus of
-        information from a network of nodes instead of from a central source. Users have more privacy and control over
-        them, they can use blockchain technologies to verify information and minimize misinformation.</p>
+    <p>web 1- Have to enter the exact URL of the website that will include information about the concept of a soccer game.</p>
+    <p>web 2- The term football is given in a search engine and the labeling process is manual, boring and covers zero percentages of the web. In addition, the web tags everything: photos, links, events, news, blogs, audio, video - without any specific filtering based on a user's preferences from the past...</p>
+    <p>web 3- When we search for the term football game in a search engine, the search will be more than accurate, because the labeling can resolve some of the ambiguity that conjunctions and synonyms produce within an analysis, and the use of royal intelligence will present the user, based on the metadata collected on it, results that are more adapted to him and content that will be more. are relevant to him based on his past search history. In addition, a search also relies on the location of that person - if, a person in the US searches for the concept of football, he will receive results that are more tailored to him - unlike a company person who searches for the concept of football.</P>
+    </p>
     <p><img src="web.jpeg" alt="boy" class="w3-image" width="587" height="642"></p>
 </section>
 
@@ -131,12 +130,11 @@
             <form>
                 <label for="fname">Full Name</label>
                 <input type="text" id="fname" name="firstname" placeholder="Your full name..">
-                <label for="lname">Email</label>
-                <input type="text" id="lname" name="Email" placeholder="Your Email..">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="Email" placeholder="Your Email..">
                 <label for="subject">Subject</label>
                 <textarea id="subject" name="subject" placeholder="Write something.."
                           style="height:170px"></textarea>
-
                 <select name="emoji" id="emoji" onchange="myFunction()">
                     <option value=Emoji>Emoji</option>
                     <option value="&#128514">&#128514</option>
@@ -149,12 +147,13 @@
                     <option value="&#128546">&#128546</option>
                 </select>
                 <button type="button" onclick="sendEmail()"
-                        style="background-color: #3e8e41; font-family:Klavika bold,serif; font-size: 20px; color: #ffffff; padding: 12px 120px; margin: 10px 10px 20px; border: none; cursor: pointer;">
+                        style="background-color: #3e8e41; font-family:MV Boli,serif; font-size: 20px; color: #ffffff; padding: 12px 120px; margin: 10px 10px 20px; border: none;">
                     Submit
                 </button>
+                </script>
                 <script>
                     function myFunction() {
-                        const textarea = document.getElementById('message');
+                        const textarea = document.getElementById('subject');
                         if (document.getElementById('emoji').value !== 'Emoji') {
                             textarea.value += document.getElementById('emoji').value;
                         }
@@ -164,12 +163,12 @@
             <script>
                 function sendEmail() {
                     var fullName = document.getElementById("fname").value;
-                    var email = document.getElementById("lname").value;
+                    var email = document.getElementById("email").value;
                     var email1 = "edensar10@gmail.com";
                     var subject = document.getElementById("subject").value;
-                    window.location.href = "mailto:" + email1 + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent("Full Name: " + fullName + "\n\n" + "Email: " + email + "\n\n" + "Message: " + subject);
+                    var mailtoLink = "mailto:" + email1 + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent("Full Name: " + fullName + "\n\n" + "Email: " + email + "\n\n" + "Message: " + subject);
+                    window.location.href = mailtoLink;
                 }
-            </script>
         </div>
     </div>
 </section>
